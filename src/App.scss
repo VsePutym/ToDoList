@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+  color: white;
+  height: 100%;
+
+}
+
+
+ul {
+  list-style: none;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+  width: 25px;
+}
+
+
+
+label input {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+  width: 80%;
+}
+
+.maineBtn {
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 20px 20px 20px 50px;
+  align-items: center;
+  border: 1px solid #84DCC6;
+  position: relative;
+}
+.maineBtn img{
+  width: 30px;
+  position: absolute;
+  left: 7px;
+  top: 25%;
+}
+.listItems{
+  height: 400px;
+  overflow: scroll;
+}
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+:root {
+  --checkbox-size: 20px;
+  --bg-color: #FFA69E;
+  --checkbox-color: #FFFFFF;
+  --hover-color: #FF686B;
+  //--tick-color: #84DCC6;
+  --tick-color: #43D490;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  //color: var(--checkbox-color);
+  font-size: 3rem;
+  color: white;
+  margin: 50px 0;
+}
+

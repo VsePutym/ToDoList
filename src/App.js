@@ -5,6 +5,9 @@ import {useState} from "react";
 import {addToDo} from "./store/sliceTodo";
 import InputField from "./components/InputField";
 import ListItems from "./components/ListItems";
+import {addWish} from "./store/sliceWish";
+import React from "react";
+import Modal from "./components/Modal/Modal";
 
 const firebaseConfig = {
   apiKey: "AIzaSyALGnziJbWnqAqFrYuzc9sgYYduic4deyI",
@@ -17,7 +20,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const App = () => {
+const App = React.memo(() => {
+
   const[text, setText] = useState('');
   const dispatch = useDispatch();
 
@@ -26,14 +30,25 @@ const App = () => {
     setText('');
   }
 
+  const addTaskWish = () => {
+    dispatch(addWish({text}));
+    setText('');
+  }
+
+  const [modalActive, setModalActive] = useState(false)
+
   return (
     <div className="App">
-      <h1>Аришкин список покупок</h1>
-      <InputField addTask={addTask} text={text} setText={setText} />
+      <span className='title'>Аришкин список покупок</span>
+      <InputField addTaskWish={addTaskWish} addTask={addTask} text={text} setText={setText} />
       <ListItems />
+      <Modal active={modalActive} setActive={setModalActive}>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, laborum.</p>
+      </Modal>
+      <button onClick={() => setModalActive(true)}>Test animated modal active</button>
     </div>
   );
-}
+})
 
 export default App;
 
